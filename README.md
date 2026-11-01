@@ -13,6 +13,12 @@ Website: https://browos.pages.dev
 - **BrowStore** to add apps, games and any website
 - Wallpapers, accent colors, light/dark mode, window styles, custom cursor
 - Sites that can't run inside a window open in their own floating window
+- More apps: To-Do, Pomodoro, Weather, Music player, Terminal, Recycle Bin, and the games Snake, Minesweeper and Tetris
+- Four virtual desktops, window snapping, and customizable keyboard shortcuts
+- Notification center with Do Not Disturb, a system tray with quick settings, and a Start menu search (apps, settings, math, web)
+- Desktop widgets (clock, calendar, weather, quote, system) and sticky notes
+- Lock screen with an optional PIN (a privacy screen, not real security), screensaver, theme packs
+- Export / import all your data as a JSON backup
 
 ## Install (beta)
 
@@ -30,7 +36,7 @@ index.html        the desktop (new tab page)
 manifest.json
 css/              one file per part of the desktop
 js/               one file per feature, loaded in order from index.html
-apps/             bundled apps (Notepad, Calculator)
+apps/             bundled apps (one folder each: index.html, app.js, style.css)
 icons/  wallpapers/  sounds/  cursors/
 ```
 
@@ -47,6 +53,7 @@ BrowOS uses some great open-source work:
 - "[Starry Night Background](https://opengameart.org/content/starry-night-background)" wallpaper by [Seth Byrd](http://www.sethbyrd.com) (CC0)
 - "[Episode 25, page 4](https://www.peppercarrot.com/0_sources/0ther/wallpapers/hi-res/2018-05-22_Episode-25-page-4_by-David-Revoy.jpg)" wallpaper by David Revoy, from the webcomic [Pepper&Carrot](https://www.peppercarrot.com), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - "[Only Komona](https://www.peppercarrot.com/0_sources/0ther/wallpapers/hi-res/2017-04-10_Only-Komona_by-David-Revoy.jpg)" wallpaper by David Revoy, from the webcomic [Pepper&Carrot](https://www.peppercarrot.com), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Weather data by [Open-Meteo.com](https://open-meteo.com) (CC BY 4.0)
 - "[Point of View](https://www.davidrevoy.com/article948/point-of-view)" wallpaper by David Revoy, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 Built by [Allysun](https://www.youtube.com/@YourAllyhere).
