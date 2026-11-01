@@ -103,6 +103,122 @@ const appCatalog = [
 		credit: "Made for BrowOS",
 	},
 
+	// more apps that come with BrowOS (they live in apps/ and get their own window when opened)
+
+	{
+		id: "todo",
+		name: "To-Do",
+		category: "apps",
+		builtIn: true,
+		icon: "icons/todo-icon.svg",
+		page: "apps/todo/index.html",
+		size: [520, 600],
+		officialPage: "apps/todo/index.html",
+		credit: "Made for BrowOS",
+		dataKeys: ["browos-todo"],
+	},
+
+	{
+		id: "pomodoro",
+		name: "Pomodoro",
+		category: "apps",
+		builtIn: true,
+		icon: "icons/pomodoro-icon.svg",
+		page: "apps/pomodoro/index.html",
+		size: [460, 560],
+		officialPage: "apps/pomodoro/index.html",
+		credit: "Made for BrowOS",
+		dataKeys: ["browos-pomodoro"],
+	},
+
+	{
+		id: "weather",
+		name: "Weather",
+		category: "apps",
+		builtIn: true,
+		icon: "icons/weather-icon.svg",
+		page: "apps/weather/index.html",
+		size: [560, 560],
+		officialPage: "apps/weather/index.html",
+		website: "https://open-meteo.com",
+		credit: "Made for BrowOS, weather data by Open-Meteo",
+		dataKeys: ["browos-weather-place", "browos-weather-unit"],
+	},
+
+	{
+		id: "music",
+		name: "Music",
+		category: "apps",
+		builtIn: true,
+		icon: "icons/music-icon.svg",
+		page: "apps/music/index.html",
+		size: [520, 640],
+		officialPage: "apps/music/index.html",
+		credit: "Made for BrowOS",
+	},
+
+	{
+		id: "terminal",
+		name: "Terminal",
+		category: "apps",
+		builtIn: true,
+		icon: "icons/terminal-icon.svg",
+		page: "apps/terminal/index.html",
+		size: [720, 440],
+		officialPage: "apps/terminal/index.html",
+		credit: "Made for BrowOS",
+	},
+
+	{
+		id: "recyclebin",
+		name: "Recycle Bin",
+		category: "apps",
+		builtIn: true,
+		icon: "icons/recyclebin-icon.svg",
+		page: "apps/recyclebin/index.html",
+		size: [560, 440],
+		officialPage: "apps/recyclebin/index.html",
+		credit: "Made for BrowOS",
+	},
+
+	{
+		id: "snake",
+		name: "Snake",
+		category: "games",
+		builtIn: true,
+		icon: "icons/snake-icon.svg",
+		page: "apps/snake/index.html",
+		size: [520, 620],
+		officialPage: "apps/snake/index.html",
+		credit: "Made for BrowOS",
+		dataKeys: ["browos-snake-best"],
+	},
+
+	{
+		id: "minesweeper",
+		name: "Minesweeper",
+		category: "games",
+		builtIn: true,
+		icon: "icons/minesweeper-icon.svg",
+		page: "apps/minesweeper/index.html",
+		size: [620, 600],
+		officialPage: "apps/minesweeper/index.html",
+		credit: "Made for BrowOS",
+	},
+
+	{
+		id: "tetris",
+		name: "Tetris",
+		category: "games",
+		builtIn: true,
+		icon: "icons/tetris-icon.svg",
+		page: "apps/tetris/index.html",
+		size: [560, 680],
+		officialPage: "apps/tetris/index.html",
+		credit: "Made for BrowOS",
+		dataKeys: ["browos-tetris-best"],
+	},
+
 	// web apps
 
 	{

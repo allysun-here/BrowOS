@@ -35,6 +35,15 @@ function createTaskbarButton(appWindow) {
 	`;
 
 	button.addEventListener("click", function () {
+		// the window is on another virtual desktop: go there instead of hiding it
+		if (typeof windowOnOtherDesktop === "function" && windowOnOtherDesktop(appWindow)) {
+			switchDesktop(Number(appWindow.dataset.desktop));
+
+			bringToFront(appWindow);
+
+			return;
+		}
+
 		if (appWindow.classList.contains("show")) {
 			appWindow.classList.remove("show");
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+- New apps: To-Do, Pomodoro, Weather, Music, Terminal, Recycle Bin, Snake, Minesweeper, Tetris
+- Virtual desktops, window snapping, customizable keyboard shortcuts
+- Notifications with Do Not Disturb, system tray and quick settings
+- Start menu search
+- Desktop widgets and sticky notes
+- Lock screen with optional PIN, screensaver, theme packs
+- Recycle Bin for removed apps and shortcuts
+- Export / import backup
+- Apps now receive keyboard focus when opened
+
 ## 1.0.0
 
 First public beta.
