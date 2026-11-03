@@ -796,3 +796,90 @@ window.addEventListener("resize", function () {
 		element.style.top = Math.min(parseInt(element.style.top) || 0, maxY) + "px";
 	});
 });
+
+// What the Notes app can do with the sticky notes on the desktop
+
+function noteElement(id) {
+	return Array.from(widgetLayer.querySelectorAll(".sticky-note")).find(function (element) {
+		return element.dataset.noteId === id;
+	});
+}
+
+const noteTools = {
+	colors: NOTE_COLORS,
+
+	list: function () {
+		return notes.map(function (note) {
+			return { id: note.id, text: note.text, color: note.color };
+		});
+	},
+
+	create: function (text) {
+		createStickyNote(text || "");
+
+		return notes.length ? notes[notes.length - 1].id : null;
+	},
+
+	update: function (id, patch) {
+		const note = notes.find(function (item) {
+			return item.id === id;
+		});
+
+		const element = noteElement(id);
+
+		if (!note) {
+			return false;
+		}
+
+		if (typeof patch.text === "string") {
+			note.text = patch.text.slice(0, 5000);
+
+			if (element) {
+				element.querySelector("textarea").value = note.text;
+			}
+		}
+
+		if (NOTE_COLORS.includes(patch.color)) {
+			note.color = patch.color;
+
+			if (element) {
+				element.style.setProperty("--note", note.color);
+			}
+		}
+
+		saveNotes();
+
+		return true;
+	},
+
+	remove: function (id) {
+		const element = noteElement(id);
+
+		notes = notes.filter(function (note) {
+			return note.id !== id;
+		});
+
+		if (element) {
+			element.remove();
+		}
+
+		saveNotes();
+	},
+
+	// bring the note into view on the desktop
+	reveal: function (id) {
+		const element = noteElement(id);
+
+		if (!element) {
+			return;
+		}
+
+		element.style.zIndex = 60;
+
+		element.classList.add("note-flash");
+
+		setTimeout(function () {
+			element.classList.remove("note-flash");
+		}, 1200);
+	},
+};

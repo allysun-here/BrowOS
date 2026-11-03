@@ -25,6 +25,8 @@
 	<link rel="stylesheet" href="css/widgets.css">
 	<link rel="stylesheet" href="css/lock.css">
 	<link rel="stylesheet" href="css/start-search.css">
+	<link rel="stylesheet" href="css/switcher.css">
+	<link rel="stylesheet" href="css/a11y.css">
 	<link rel="stylesheet" href="css/settings-extra.css">
 </head>
 
@@ -42,7 +44,7 @@
 	<div class="start-menu" id="startMenu">
 		<h2>BrowOS</h2>
 
-		<input class="start-search" id="startSearch" type="text" placeholder="Search apps, settings and the web" spellcheck="false" autocomplete="off" aria-label="Search">
+		<input class="start-search" id="startSearch" type="text" placeholder="Search apps and settings" spellcheck="false" autocomplete="off" aria-label="Search">
 		<div class="start-results" id="startResults" hidden></div>
 
 		<div class="menu-item apps-menu-item" id="appsMenuItem">
@@ -51,7 +53,7 @@
 		</div>
 
 		<div class="menu-item" data-app="browstore">BrowStore</div>
-		<div class="menu-item" data-window="explorerWindow">Files</div>
+		<div class="menu-item" data-app="files">Files</div>
 		<div class="menu-item" data-app="taskmanager">Task Manager</div>
 		<div class="menu-item" data-window="settingsWindow">Settings</div>
 		<div class="menu-item" id="lockMenuItem">Lock</div>
@@ -178,6 +180,7 @@
 				<div class="settings-nav" data-page="widgetsPage">Widgets</div>
 				<div class="settings-nav" data-page="shortcutsPage">Shortcuts</div>
 				<div class="settings-nav" data-page="dataPage">Data</div>
+				<div class="settings-nav" data-page="systemPage">System</div>
 				<div class="settings-nav" data-page="aboutPage">About</div>
 				<div class="settings-nav" data-page="creditsPage">Credits</div>
 			</div>
@@ -198,7 +201,8 @@
 							<option value="retro">Retro</option>
 							<option value="glass">Glass</option>
 							<option value="midnight">Midnight</option>
-							<option value="sunset">Sunset</option>
+							<option value="contrast">High contrast</option>
+<option value="sunset">Sunset</option>
 						</select>
 					</div>
 
@@ -569,6 +573,11 @@
 					</div>
 
 					<div class="data-message" id="dataMessage" role="status"></div>
+				</div>
+
+				<!-- System -->
+				<div class="settings-page" id="systemPage">
+					<h2>System</h2>
 				</div>
 
 				<!-- About -->
@@ -1054,9 +1063,22 @@
 <script src="js/widgets.js"></script>
 <script src="js/start-search.js"></script>
 <script src="js/hotkeys.js"></script>
+<script src="js/switcher.js"></script>
+<script src="js/clipboard.js"></script>
 <script src="js/theme-packs.js"></script>
 <script src="js/data-tools.js"></script>
+<script src="js/profiles.js"></script>
+<script src="apps/calendar/calendar-core.js"></script>
+<script src="js/filestore.js"></script>
+<script src="js/reminders.js"></script>
 <script src="js/os-api.js"></script>
+<script src="js/palette.js"></script>
+<script src="js/sdk-bridge.js"></script>
+<script src="js/slideshow.js"></script>
+<script src="js/sync.js"></script>
+<script src="js/a11y.js"></script>
+<script src="js/system-settings.js"></script>
+<script src="js/tour.js"></script>
 <script src="js/builtin-updates.js"></script>
 <script src="js/main.js"></script>
 <script src="js/browstore.js"></script>

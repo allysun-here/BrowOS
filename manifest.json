@@ -13,6 +13,10 @@
 		"newtab": "index.html"
 	},
 	"permissions": [
-		"system.memory"
+		"system.memory",
+		"storage"
+	],
+	"optional_permissions": [
+		"bookmarks"
 	]
 }

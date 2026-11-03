@@ -109,3 +109,19 @@
 	text-align: right;
 	color: rgba(var(--soft), 0.8);
 }
+
+/* System page */
+
+#systemPage > div {
+	margin-bottom: 24px;
+}
+
+#systemPage h3 {
+	margin: 0 0 8px;
+
+	font-size: 15px;
+}
+
+#systemPage .button-row.inline {
+	align-items: center;
+}

@@ -154,6 +154,39 @@
 			};
 		},
 
+		notes: noteTools,
+
+		files: {
+			kind: fileKind,
+			node: fileNodeGet,
+			list: fileList,
+			path: filePath,
+			search: fileSearch,
+			totalSize: fileTotalSize,
+			mkdir: fileMkdir,
+			write: fileWrite,
+			read: fileRead,
+			text: fileText,
+			rename: fileRename,
+			move: fileMove,
+			remove: fileRemove,
+			restore: fileRestore,
+			emptyTrash: fileEmptyTrash,
+			download: function (id) {
+				return fileRead(id).then(downloadFileNode);
+			},
+			open: openFileById,
+			openWith: openFileWith,
+			// an app asks once for the file it was opened with
+			takeOpenRequest: function (appId) {
+				const id = pendingFileOpen[appId];
+
+				delete pendingFileOpen[appId];
+
+				return id || null;
+			},
+		},
+
 		bin: {
 			items: function () {
 				return binItems.slice();

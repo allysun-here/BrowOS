@@ -9,10 +9,18 @@ const THEME_PACKS = {
 	retro: { theme: "dark", corners: "square", buttons: "windows", transparency: 0, accent: "#4caf50" },
 	glass: { theme: "dark", corners: "rounded", buttons: "windows", transparency: 65, accent: "#00bcd4" },
 	midnight: { theme: "dark", corners: "rounded", buttons: "mac", transparency: 30, accent: "#8e5cf7" },
+	contrast: { theme: "dark", corners: "square", buttons: "windows", transparency: 0, accent: "#ffd400" },
 	sunset: { theme: "dark", corners: "rounded", buttons: "windows", transparency: 35, accent: "#ff9800" },
 };
 
 let applyingPack = false;
+
+// the high contrast pack also adds borders and removes blur
+function syncContrastClass() {
+	document.documentElement.classList.toggle("high-contrast", localStorage.getItem("browos-theme-pack") === "contrast");
+}
+
+syncContrastClass();
 
 function applyThemePack(name) {
 	const pack = THEME_PACKS[name];
@@ -61,6 +69,8 @@ themePackSelect.addEventListener("change", function () {
 
 	localStorage.setItem("browos-theme-pack", themePackSelect.value);
 
+	syncContrastClass();
+
 	if (THEME_PACKS[themePackSelect.value]) {
 		applyThemePack(themePackSelect.value);
 	}
@@ -74,6 +84,8 @@ function becomeCustom() {
 	}
 
 	localStorage.setItem("browos-theme-pack", "custom");
+
+	syncContrastClass();
 
 	themePackSelect.value = "custom";
 

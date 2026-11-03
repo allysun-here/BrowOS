@@ -234,7 +234,7 @@ function createAppWindow(app) {
 
 	if (app.size) {
 		appWindow.style.width = Math.min(app.size[0], window.innerWidth - 20) + "px";
-		appWindow.style.height = Math.min(app.size[1], window.innerHeight - 100) + "px";
+		appWindow.style.height = Math.min(app.size[1], window.innerHeight - 130) + "px";
 	}
 
 	const header = document.createElement("div");
@@ -280,7 +280,7 @@ function createAppWindow(app) {
 	// websites use their address, apps that come with BrowOS use their own page
 	frame.dataset.src = app.page || app.url;
 
-	frame.allow = "fullscreen; clipboard-write; autoplay";
+	frame.allow = "fullscreen; clipboard-write; autoplay; microphone; display-capture";
 
 	appWindow.append(header, frame);
 

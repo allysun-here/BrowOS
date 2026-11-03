@@ -19,6 +19,12 @@ Website: https://browos.pages.dev
 - Desktop widgets (clock, calendar, weather, quote, system) and sticky notes
 - Lock screen with an optional PIN (a privacy screen, not real security), screensaver, theme packs
 - Export / import all your data as a JSON backup
+- **Files**: a file manager (folders, upload, drag to move, trash, search) stored in your browser
+- More apps: Calendar with repeats and reminders, Image Viewer, PDF Viewer, Code Editor, Notes (manages your sticky notes), Habits, Budget, Bookmarks, Recorder (voice and screen), and the games Chess, Sudoku, Solitaire and Orb Hop
+- Window switcher (hold Alt, press J), Task View (Ctrl + Alt + Up), command palette (Ctrl + Shift + P), clipboard history
+- Profiles with separate data and files, optional sync through your browser account, wallpaper slideshow
+- A small [SDK](sdk/README.md) so websites in a BrowOS window can show notifications and save files, with permission prompts
+- Keyboard focus rings, window roles and names, reduce motion and a high contrast theme pack
 
 ## Install (beta)
 
@@ -29,6 +35,17 @@ Website: https://browos.pages.dev
 
 Keep the folder where it is after installing. To update, replace the files in the same folder and hit reload on the extensions page. Your settings stay.
 
+## Firefox
+
+`scripts/build.sh` also makes `dist/BrowOS-firefox.zip` with `manifest.firefox.json` (Firefox 115 or newer).
+This build has **not been tested in Firefox**. Features that use Chrome-only APIs (separate floating
+windows, the memory figure in Task Manager) are expected to be missing there.
+
+## Permissions
+
+`storage` (sync) and `system.memory` (the memory figure in Task Manager). Reading bookmarks is an
+**optional** permission that is only asked for when you press the button in the Bookmarks app.
+
 ## Project layout
 
 ```
@@ -37,8 +54,13 @@ manifest.json
 css/              one file per part of the desktop
 js/               one file per feature, loaded in order from index.html
 apps/             bundled apps (one folder each: index.html, app.js, style.css)
+sdk/              browos-sdk.js for websites that run in a BrowOS window
+tests/            browser checks (see tests/README.md)
+scripts/          build.sh makes the Chrome and Firefox packages
 icons/  wallpapers/  sounds/  cursors/
 ```
+
+Run the checks with `cd tests && npm install && npm test`.
 
 Scripts share the page, so the order of the `<script>` tags in `index.html` matters.
 

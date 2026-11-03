@@ -309,7 +309,7 @@ setInterval(async function () {
 	}
 }, 250);
 
-chrome.windows.onRemoved.addListener(function (windowId) {
+if (chrome.windows && chrome.windows.onRemoved) chrome.windows.onRemoved.addListener(function (windowId) {
 	const appId = floatingAppId(windowId);
 
 	if (appId) {
